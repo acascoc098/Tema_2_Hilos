@@ -12,7 +12,7 @@ class Hilo1 implements Runnable{
         System.out.printf("Hola soy el hilo %s, de la clase Hilo1\n", this.nombre);
         Random r = new Random();
 
-        for (int i=0; i<5; i++){
+        //for (int i=0; i<5; i++){
             int pausa = 10 + r.nextInt(500-10);
             System.out.printf("Hilo: %s , hace una pausa de %d milisegundos\n", this.nombre, pausa);
             try {
@@ -20,7 +20,7 @@ class Hilo1 implements Runnable{
             }catch (InterruptedException e){
                 System.out.printf("Hilo %s interrumpido \n,", this.nombre);
             }
-        }
+        //}
         System.out.printf("Hilo %s terminado \n", this.nombre);
     }
 }
@@ -37,7 +37,7 @@ class Hilo2 implements Runnable{
         System.out.printf("Hola soy el hilo %s, de la clase Hilo2\n", this.nombre);
         Random r = new Random();
 
-        for (int i=0; i<5; i++){
+        //for (int i=0; i<5; i++){
             int pausa = 10 + r.nextInt(500-10);
             System.out.printf("Hilo: %s , hace una pausa de %d milisegundos\n", this.nombre, pausa);
             try {
@@ -45,13 +45,15 @@ class Hilo2 implements Runnable{
             }catch (InterruptedException e){
                 System.out.printf("Hilo %s interrumpido \n,", this.nombre);
             }
-        }
+        //}
         System.out.printf("Hilo %s terminado \n", this.nombre);
     }
 }
 
 public class Ejercicio3 {
     public static void main(String[] args) {
+
+        System.out.println("acascoc098 Andrea Castilla Cocera");
         
         System.out.println(eligehilo());
 
