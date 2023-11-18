@@ -55,17 +55,38 @@ public class Ejercicio3 {
         
         System.out.println(eligehilo());
 
-        /*Thread h1 = new Thread(new Hilo1("H1"));
-        Thread h2 = new Thread(new Hilo2("H2"));
-        h1.start();
+        for (int i = 0; i < 4; i++) {
+            boolean elige = eligehilo();
+            String nombre = "H" + (i+1);
+            Thread hilo = null;
+
+            if (elige) {
+                hilo = new Thread(new Hilo1(nombre));
+            } else {
+                hilo = new Thread(new Hilo2(nombre));
+            }
+
+            hilo.start();
+
+            try {
+                hilo.join();
+            } catch (InterruptedException e) {
+                System.out.println("Hilo principal interrumpido");            
+            }
+        }
+
+        //Thread h1 = new Thread(new Hilo1("H1"));
+        //Thread h2 = new Thread(new Hilo2("H2"));
+
+        /*h1.start();
         h2.start();
         try{
             h1.join();
             h2.join();
         }catch (InterruptedException e){
             System.out.println("Hilo principal interrumpido");
-        }
-        System.out.println("Hilo principal terminado.");*/
+        }*/
+        System.out.println("Hilo principal terminado.");
     }
 
     public static boolean eligehilo(){
