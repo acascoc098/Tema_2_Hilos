@@ -16,7 +16,7 @@ public class NumeroOculto {
     synchronized public int verSi(int numAMirar){
         int num = 0;
         if (this.numAdivinar == numAMirar){
-            condicion = true;
+            this.condicion = true;
             num = 1;
         }
         return num;
