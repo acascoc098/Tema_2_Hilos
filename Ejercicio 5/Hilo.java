@@ -23,16 +23,12 @@ public class Hilo extends Thread {
     public void run(){
 		
 		int cantidadATransferir = 10;
-		int numTransferencias = 0;
-		for (int i=0; i<1000; i++){
-			if (Transferencia.transferencia(cuenta1, cuenta2, cantidadATransferir))
-				numTransferencias++;
-		}
+		if (Transferencia.transferencia(cuenta1, cuenta2, cantidadATransferir))
+			System.out.println("Transferencia realizada correctamente");
 		
-		String msg = "Fin transferencia de la cuenta " + this.cuenta1.getNumeroCuenta();
-			msg+=" a la cuenta " + this.cuenta2.getNumeroCuenta();
-			msg+=" Realizada por el hilo " + this.getNombre();
-			msg+=" por " + numTransferencias + " realizadas\n";
+		String msg = "Fin transferencia de la cuenta " + this.cuenta1.getNumeroCuenta() + 
+					" a la cuenta " + this.cuenta2.getNumeroCuenta() +
+					" Realizada por el hilo " + this.getNombre();
 		System.out.println(msg);
 	}
 }

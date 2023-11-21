@@ -16,7 +16,7 @@ class Cuenta {
 		this.saldo += cantidad;
 	}
 	
-	public int getSaldo(){
+	public synchronized int getSaldo(){
 		return this.saldo;
 	}
 	

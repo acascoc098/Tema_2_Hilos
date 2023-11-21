@@ -4,14 +4,11 @@ public class Transferencia {
 		Cuenta cuentaOrdenMenor, cuentaOrdenMayor;
 		
 		if (c1.getNumeroCuenta().compareTo(c2.getNumeroCuenta()) <0 ){
-			//por orden la cuenta1 está antes que c2
 			cuentaOrdenMenor = c1;
 			cuentaOrdenMayor = c2;
-		//	System.out.println("C1 es menor que C2\n");
 		}else{
 			cuentaOrdenMenor = c2;
 			cuentaOrdenMayor = c1;
-		//	System.out.println("C2 es menor que C1\n");
 		}
 		
 		synchronized (cuentaOrdenMenor){
@@ -21,7 +18,7 @@ public class Transferencia {
 					cuentaOrdenMayor.ingresarCantidad(cantidad);
 					return true;
 				}
-				return false;  //no hay saldo suficiente en la cuenta Menor
+				return false;
 			}
 		}
 		
