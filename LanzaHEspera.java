@@ -5,6 +5,7 @@ import java.util.Random;
 public class LanzaHEspera {
 
     public static void main(String[] args) {
+        System.out.println("acascoc098 Andrea Castilla Cocera");
         Thread hilo = new Thread(new Hilo("H23"));
         Thread hilo2 = new Thread(new Hilo("H2"));
 
