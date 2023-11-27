@@ -17,10 +17,10 @@ class Puente {
      * Método para modificar el estado del puente una vez haya salido un coche
      * @param peso EL peso del coche
      */
-    public synchronized void finalizarPaso(int peso) {
+    public synchronized void finalizarPaso(int peso, String nombre) {
         cochesEnPuente--;
         pesoEnPuente -= peso;
-        System.out.println("Coche salió del puente. Coches en el puente: " + cochesEnPuente + ", Peso en el puente: " + pesoEnPuente);
+        System.out.println(nombre + " con un peso de: " + peso + " salió del puente. Coches en el puente: " + cochesEnPuente + ", Peso en el puente: " + pesoEnPuente);
         notifyAll();
     }
 
@@ -29,12 +29,12 @@ class Puente {
      * @param peso Peso del coche
      * @throws InterruptedException
      */
-    public synchronized void iniciarPaso(int peso) throws InterruptedException {
+    public synchronized void iniciarPaso(int peso, String nombre) throws InterruptedException {
         while (!sePermitePaso(peso)) {
             wait();
         }
         cochesEnPuente++;
         pesoEnPuente += peso;
-        System.out.println("Coche entró en el puente. Coches en el puente: " + cochesEnPuente + ", Peso en el puente: " + pesoEnPuente);
+        System.out.println(nombre + " con un peso de: " + peso + " entró en el puente. Coches en el puente: " + cochesEnPuente + ", Peso en el puente: " + pesoEnPuente);
     }
 }
