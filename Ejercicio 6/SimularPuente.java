@@ -4,6 +4,7 @@ public class SimularPuente {
     public static void main(String[] args) {
         Puente puente = new Puente();
         Random rand = new Random();//Para generar un peso, tiempo de llegada y tiempo del paso aleatorios
+        System.out.println("acascoc098 Andrea Castilla Cocera");
 
         for (int i = 0; i < 6; i++) {//Probraremos con 6 coches
             String nombrecoche = "Coche " + (i+1);

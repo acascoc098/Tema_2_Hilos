@@ -20,7 +20,7 @@ class Puente {
     public synchronized void finalizarPaso(int peso, String nombre) {
         cochesEnPuente--;
         pesoEnPuente -= peso;
-        System.out.println(nombre + " con un peso de: " + peso + " salió del puente. Coches en el puente: " + cochesEnPuente + ", Peso en el puente: " + pesoEnPuente);
+        System.out.println(nombre + " con un peso de: " + peso + " salió del puente.\n Coches en el puente: " + cochesEnPuente + ", Peso en el puente: " + pesoEnPuente);
         notifyAll();
     }
 
@@ -35,6 +35,6 @@ class Puente {
         }
         cochesEnPuente++;
         pesoEnPuente += peso;
-        System.out.println(nombre + " con un peso de: " + peso + " entró en el puente. Coches en el puente: " + cochesEnPuente + ", Peso en el puente: " + pesoEnPuente);
+        System.out.println(nombre + " con un peso de: " + peso + " entró en el puente.\n Coches en el puente: " + cochesEnPuente + ", Peso en el puente: " + pesoEnPuente);
     }
 }
